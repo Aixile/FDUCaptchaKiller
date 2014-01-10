@@ -13,8 +13,6 @@ typedef pair<int,int> pII;
 #define MAXROW 16
 #define MAXCOL 12
 
-const string trained_model("train.model");
-
 Mat doThreshold(Mat src,int v){
 	Mat gray,bin;
 	cvtColor(src,gray,CV_RGB2GRAY);
@@ -176,12 +174,16 @@ int getValue(Mat &a,int i,int j){
 
 struct svm_model* model;
 struct svm_node * node[4];
+string trained_model("train.model");
 string answer="";
 
 int main(int argc, char *argv[])
 {
-	if(argc!=2){
-		cerr<<"USAGE: "<<argv[0]<<" ImageFilePath"<<endl;
+	if(argc<2||argc>3){
+		cerr<<"Usage: "<<argv[0]<<" ImageFilePath "<<" [libsvm_model]"<<endl;
+		cerr<<endl;
+		cerr<<"Note that if the libsvm model file is not specified, program will use train.model under current directory as default model."<<endl;
+		cerr<<endl;
 		return 1;
 	}
 	Mat src=imread(argv[1],CV_LOAD_IMAGE_UNCHANGED),bin,bin4[4],std[4];
@@ -189,6 +191,7 @@ int main(int argc, char *argv[])
 		cerr<<"ERROR: Could not load source file: "<<argv[1]<<endl;
 		return 1;
 	}
+	if(argc==3)	trained_model=argv[2];
 	model=svm_load_model(trained_model.c_str());
 	if(model==0){
 		cerr<<"ERROR: Could not load libsvm model: "<<trained_model<<endl;
