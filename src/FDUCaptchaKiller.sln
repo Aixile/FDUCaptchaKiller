@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FDUCaptchaKiller", "FDUCaptchaKiller.vcxproj", "{D1B61038-7C50-4CB4-A6DF-CCC3F8D6406F}"
 EndProject
 Global
@@ -13,8 +15,8 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{D1B61038-7C50-4CB4-A6DF-CCC3F8D6406F}.Debug|Win32.ActiveCfg = Debug|Win32
 		{D1B61038-7C50-4CB4-A6DF-CCC3F8D6406F}.Debug|Win32.Build.0 = Debug|Win32
-		{D1B61038-7C50-4CB4-A6DF-CCC3F8D6406F}.Debug|x64.ActiveCfg = Release|x64
-		{D1B61038-7C50-4CB4-A6DF-CCC3F8D6406F}.Debug|x64.Build.0 = Release|x64
+		{D1B61038-7C50-4CB4-A6DF-CCC3F8D6406F}.Debug|x64.ActiveCfg = Release|Win32
+		{D1B61038-7C50-4CB4-A6DF-CCC3F8D6406F}.Debug|x64.Build.0 = Release|Win32
 		{D1B61038-7C50-4CB4-A6DF-CCC3F8D6406F}.Release|Win32.ActiveCfg = Release|Win32
 		{D1B61038-7C50-4CB4-A6DF-CCC3F8D6406F}.Release|Win32.Build.0 = Release|Win32
 		{D1B61038-7C50-4CB4-A6DF-CCC3F8D6406F}.Release|x64.ActiveCfg = Release|x64
