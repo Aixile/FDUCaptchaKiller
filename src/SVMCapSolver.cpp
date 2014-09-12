@@ -24,7 +24,7 @@ void SVMCapSolver::doDivide(Mat& bin, Mat binArr[], pII posInfo[]){
 	}
 }
 
-Mat SVMCapSolver::convert2Standard(Mat& m){
+Mat SVMCapSolver::convert2Standard(const Mat& m){
 	int r = m.rows, c = m.cols;
 	if (r>MAXROW || c>MAXCOL){
 		cerr << "ERROR: Character size is too big. Row Size=" << r << " ,Col Size=" << c << endl;
@@ -62,7 +62,7 @@ queue<pII> SVMCapSolver::doBFS(queue<pII> &que, Mat_<uchar> &m){
 	return save;
 }
 
-Mat SVMCapSolver::doClear(Mat &src, int pix_lim){
+Mat SVMCapSolver::doClear(const Mat& src, int pix_lim){
 	memset(visit, 0, sizeof(visit));
 	int imgh = src.rows, imgw = src.cols;
 	Mat_<uchar> m = src;
@@ -85,7 +85,7 @@ Mat SVMCapSolver::doClear(Mat &src, int pix_lim){
 	return m;
 }
 
-Mat SVMCapSolver::findCharacter(Mat& M){
+Mat SVMCapSolver::findCharacter(const Mat& M){
 	int r = M.rows, c = M.cols;
 	Mat_<uchar> m = M;
 

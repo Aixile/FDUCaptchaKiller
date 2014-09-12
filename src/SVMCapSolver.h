@@ -15,10 +15,10 @@ protected:
 	Mat doThreshold(Mat& src, int v);
 	void doDivide(Mat& bin, Mat binArr[], pII posInfo[]);
 	int getValue(Mat& a, int i, int j);
-	virtual Mat doClear(Mat &src, int pix_lim);
+	virtual Mat doClear(const Mat& src, int pix_lim);
 	virtual queue<pII> doBFS(queue<pII> &que, Mat_<uchar> &m);
-	virtual Mat SVMCapSolver::findCharacter(Mat& M);
-	virtual Mat convert2Standard(Mat& m);
+	virtual Mat findCharacter(const Mat& M);
+	virtual Mat convert2Standard(const Mat& m);
 
 public:
 	SVMCapSolver(svm_model model);
