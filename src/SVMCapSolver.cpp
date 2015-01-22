@@ -33,7 +33,8 @@ Mat SVMCapSolver::convert2Standard(const Mat& m){
 	Mat s(MAXROW, MAXCOL, m.type());
 	s = 255;
 	int rs = (MAXROW - r) / 2, cs = (MAXCOL - c) / 2;
-	m.copyTo(s(Rect(cs, rs, c, r)));
+	Mat t=s(Rect(cs,rs,c,r));
+	m.copyTo(t);
 	return s;
 }
 
